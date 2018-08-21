@@ -15,17 +15,17 @@ using std::vector;
 
 class undirectGraph {
 public:
-    Graph(unsigned int Vertices);
-    explicit Graph(const std::istream& input);
-    unsigned int getV() const; // get the number of vertices
-    unsigned int getE() const; // get the number of edges
+    explicit undirectGraph(unsigned int Vertices);
+    explicit undirectGraph(std::istream& input);
+    unsigned int getV() const { return numOfV; } // get the number of vertices
+    unsigned int getE() const { return numOfE; } // get the number of edges
     void addEdge(int v, int w); // add edge between vertices v&w
     LinkedList<int> adj(int v); // return the adjacent vertices of v
     string toString() const;
 
 private:
-    int numOfV;
-    int numOfE;
+    unsigned int numOfV;
+    unsigned int numOfE;
     vector<LinkedList<int>> adjacentList;
 };
 
